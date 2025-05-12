@@ -121,7 +121,7 @@ class Ssv2_few_shot(BaseVideoDataset):
                     "supervised_label" indicating the class of the video 
         """
         class_ = self._samples[index]["label_idx"]
-        video_path = os.path.join(self.data_root_dir, self._samples[index]["id"]+".mp4")
+        video_path = os.path.join(self.data_root_dir, self._samples[index]["id"]+".webm")
         sample_info = {
             "path": video_path,
             "supervised_label": class_,
@@ -367,7 +367,7 @@ class Ssv2_few_shot(BaseVideoDataset):
             paths, vid_id = c.get_rand_vid(label, idx) 
             # imgs = self.load_and_transform_paths(paths)
             if self.dataset_name == 'Ssv2_few_shot':
-                video_path = os.path.join(self.data_root_dir, paths + ".mp4")
+                video_path = os.path.join(self.data_root_dir, paths + ".webm")
             else:
                 video_path = os.path.join(self.data_root_dir, paths)
             sample_info = {
@@ -446,7 +446,7 @@ class Ssv2_few_shot(BaseVideoDataset):
             paths, vid_id = c.get_rand_vid(label, idx) 
             # imgs = self.load_and_transform_paths(paths)
             if self.dataset_name == 'Ssv2_few_shot':
-                video_path = os.path.join(self.data_root_dir, paths + ".mp4")
+                video_path = os.path.join(self.data_root_dir, paths + ".webm")
             else:
                 video_path = os.path.join(self.data_root_dir, paths)
             sample_info = {
